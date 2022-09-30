@@ -13,7 +13,7 @@ def index(request):
 
         city_name = request.GET.get('city_name', 'Mumbai')
 
-        my_api_key = 'b5ebbbb28a42420b280bd55560394776'
+        my_api_key = 'yourAPIKEY'
 
         url = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={my_api_key}&units=metric"
 

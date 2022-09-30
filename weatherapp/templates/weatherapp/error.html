@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Error</title>
+    <link href="{% static 'weatherapp/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark justify-content-between">
+            <a href="{% url 'index' %}" class="navbar-brand" >Weather Forecast</a>
+            <form class="d-flex" method="GET" action='/'>
+                <input class="form-control me-2" type="search" placeholder="Enter any place" aria-label="Search" name="city_name" id="city_name">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </nav>
+        <div class="row m-5">
+            <div class="col-md-12">
+                <div class="card-body">
+                    <h4 class="card-title text-danger"><b><u>{{city_name}}</u></b> City not Found or not Available</h4>
+                </div>
+                <img src="{% static 'weatherapp/error.gif' %}" class="rounded mx-auto d-block">
+                
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
